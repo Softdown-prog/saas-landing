@@ -43,13 +43,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (navCollapse) {
       // Usa a API do Bootstrap para fechar o collapse de forma segura
-      const bsCollapse = bootstrap.Collapse.getOrCreateInstance(navCollapse, {
-        toggle: false,
-      });
+      const bsCollapse =
+        typeof bootstrap !== 'undefined' && bootstrap.Collapse
+          ? bootstrap.Collapse.getOrCreateInstance(navCollapse, { toggle: false })
+          : null;
 
       navLinks.forEach((link) => {
         link.addEventListener('click', () => {
-          if (navCollapse.classList.contains('show')) {
+          if (bsCollapse && navCollapse.classList.contains('show')) {
             bsCollapse.hide();
           }
         });

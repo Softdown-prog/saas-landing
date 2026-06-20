@@ -27,6 +27,9 @@
 
 }
 
+/* Marcador de tema — estilos aplicados via body e :root */
+.theme-neon-glass{}
+
 /* ==========================================================
    2. RESET BÁSICO
    ========================================================== */
@@ -162,6 +165,8 @@ h1,h2,h3,h4,h5,h6{
 
   pointer-events:none;
 
+  z-index:1;
+
 }
 
 /* ==========================================================
@@ -175,6 +180,8 @@ h1,h2,h3,h4,h5,h6{
   border-radius:50%;
 
   pointer-events:none;
+
+  z-index:0;
 
 }
 
@@ -329,6 +336,16 @@ h1,h2,h3,h4,h5,h6{
   backdrop-filter:blur(20px);
 
   border-radius:20px;
+
+}
+
+#depoimentos .card-footer{
+
+  background:transparent;
+
+  border-color:var(--border);
+
+  color:var(--text-muted);
 
 }
 
